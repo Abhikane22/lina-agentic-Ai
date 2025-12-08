@@ -6,3 +6,232 @@ Slide No.	Header Title
 5	Tech Stack – Frontend UI + Backend APIs
 6	Tech Stack – AI Agents + Decision Engine + Data Layer
 7	Innovation & Future Scope
+  ----------------------------------------------------------------
+
+
+Understood — **now you are explicitly asking for full content for each slide**, so I will deliver complete material.
+I will write it in a **presentation-ready format**, with **precise text for slides**, **where to put visuals**, and **where YOU will speak more during presentation**.
+
+Your deck will feel **technical, thoughtful, agent-oriented, not generic.**
+Let’s build it slide-by-slide.
+
+---
+
+# 🔥 **Slide 1 — Title**
+
+**LINA – Lending Intelligence & Negotiation Assistant**
+**Agentic AI for End-to-End Personal Loan Processing**
+
+**Team Panthers | Sardar Patel Institute of Technology, Mumbai**
+
+> *An AI-driven system that converses, verifies, evaluates, and sanctions personal loans — inside a single chat experience.*
+
+**Visual:** LINA bot + loan chat mock UI
+*(No bullet overload. Clean aesthetic.)*
+
+---
+
+# 🔥 **Slide 2 — Problem + Traditional vs LINA + Solution Vision** *(Combined slide)*
+
+### ❗ Industry Pain Points
+
+* Manual processing → slow turnaround (2–72 hours)
+* KYC + salary slip + underwriting involve **multiple handoffs**
+* High drop-off during onboarding forms
+* Customer persuasion highly dependent on human skill
+
+---
+
+### 🆚 Traditional vs LINA Journey (center table)
+
+| Traditional Loan Flow                 | With **LINA Agentic AI Flow**              |
+| ------------------------------------- | ------------------------------------------ |
+| Branch visits / paperwork             | Simple **chat-based onboarding**           |
+| Human officers required for each step | Multi-agent **automation cuts dependency** |
+| Slow underwriting → wait time         | **Instant rule-driven decisioning**        |
+| Customers drop frequently             | Persuasive AI reduces drop-off             |
+
+---
+
+### 🎯 One Line Solution
+
+> **A master AI agent orchestrating worker agents to handle chat → KYC → underwriting → sanction PDF automatically.**
+
+**Visual:** Side-by-side timeline comparison (Old vs New)
+
+---
+
+# 🔥 **Slide 3 — User Flow + Backend Trigger Journey**
+
+**Conversation → Logic → Sanction — live in one pipeline**
+
+```
+User Chat → /chat API Call
+        → Master Agent interprets intent
+                ↓
+        Sales Agent collects amount, tenure, purpose
+                ↓
+        Verification Agent → CRM Mock (KYC)
+                ↓
+        Underwriting Agent → Credit API + FOIR Rules
+                ↓
+Decision → Approve / Conditional / Reject
+                ↓
+If approved → Sanction PDF generated & sent to UI
+```
+
+### Key Highlights (short bullets)
+
+* **Every customer message triggers backend workflows**
+* Salary slip path is conditionally activated (≤2× limit case)
+* Master Agent supervises task delegation
+* Fully **traceable rule-based decisions** (not LLM randomness)
+
+**Visual:** Flow line diagram exactly like above in box-chain format
+
+---
+
+# 🔥 **Slide 4 — System Architecture Overview**
+
+```
+Web UI  (React)
+    ↓ REST/WebSocket
+Backend API (FastAPI/Flask)
+    ↓
+Master Agent (LLM Brain)
+    ├─ Sales Agent
+    ├─ Verification Agent
+    ├─ Underwriting Agent
+    └─ Sanction Agent
+            ↓
+Services & Database Layer
+    ├─ CRM (synthetic user data)
+    ├─ Credit Score mock
+    ├─ Offer/Config DB
+    └─ Logs + History + PDF storage
+```
+
+### Notes to speak verbally:
+
+* Agents are **modular micro-brains**, not one monolithic model
+* We maintain **clear separation of responsibility per agent**
+* Allows **parallel scaling** for multiple customers
+
+**Visual element:** layered block architecture → looks professional & engineering heavy
+
+---
+
+# 🔥 **Slide 5 — Tech Stack (Frontend + APIs)**
+
+*(Keep visually rich with icons/logos)*
+
+### 🖥 **Frontend Layer**
+
+* **React** for lightweight responsive UI
+* Chat components: `ChatWindow`, `MessageBubble`, `LoanSummaryPanel`
+* Axios/WebSocket for streaming bot responses
+* Built-in Salary slip upload → triggers server validation
+* PDF can be viewed inline using iframe/open in new tab
+
+### 🔗 **Backend API Gateway**
+
+* **FastAPI/Flask** handles all interactions
+* Endpoints:
+
+  ```
+  POST /chat → Master Agent inference
+  POST /crm/verify → KYC validation
+  POST /credit-score → Fetch mock score
+  POST /sanction-letter → Generate PDF
+  ```
+* Modular services for easy NBFC integration
+
+**Mini Diagram:**
+Frontend ↔ API ↔ Agents ↔ DB
+
+---
+
+# 🔥 **Slide 6 — Tech Stack (AI Agents + Orchestration)**
+
+### 🤖 Agentic Intelligence Layer
+
+| Agent                  | Responsibility                             |
+| ---------------------- | ------------------------------------------ |
+| **Master Agent**       | Conversation controller, routing decisions |
+| **Sales Agent**        | Loan negotiation, requirements collection  |
+| **Verification Agent** | KYC lookup via CRM                         |
+| **Underwriting Agent** | FOIR + loan rules + approval logic         |
+| **Sanction Agent**     | Auto PDF → T&C → share link                |
+
+**Stack Used**
+
+* **OpenAI GPT-4/5** for reasoning & persuasion
+* **LangChain / CrewAI orchestration**
+* Function calling mapped to backend services
+* Agents communicate in **tool-driven execution chain**
+
+**Key selling line:**
+
+> We don't *just* chat — we execute business actions programmatically.
+
+---
+
+# 🔥 **Slide 7 — Tech Stack (Decision Engine + Data Layer)**
+
+### Underwriting Logic (Rule Matrix)
+
+| Condition                      | Action                                           |
+| ------------------------------ | ------------------------------------------------ |
+| Loan ≤ Preapproved Limit       | **Instant Approval**                             |
+| Loan ≤ 2× Limit                | Ask **Salary Slip** → FOIR check ≤ 50% → Approve |
+| Loan > 2× Limit OR Score < 700 | **Reject with reasoning**                        |
+
+### FOIR Calculation
+
+```
+FOIR = (Existing EMI + New EMI) / Monthly Income × 100
+```
+
+### Databases
+
+* Synthetic Customer DB
+* PAN-mapped Credit Score DB
+* Offer Mart config values
+* Logging for audit + analytics
+
+**Visual:** FOIR bar indicator or small decision tree diagram
+
+---
+
+# 🔥 **Slide 8 — Innovation & Future Scope** *(Last Slide)*
+
+### What makes LINA Innovative?
+
+* **Agentic workflow**, not linear chatbot
+* Instant lending with **documentless approval path**
+* Explainable decisions → rule + model synergy
+* Real-time **persuasion to reduce churn**
+
+### Future Expansion
+
+* Integrate **CKYC / PAN NSDL / bank OCR**
+* Voice Bot + WhatsApp Flow
+* Risk score trained using user history NLP
+* Scale into **Auto Loan / Home Loan / BNPL**
+
+**Visual idea:** Roadmap arrow → v1 (current) → v2 → v3
+
+---
+
+## Final deck is powerful, crisp, technical, non-generic.
+
+Your narration will bring it alive.
+
+If you want, I can prepare:
+
+✔ Speaker narration script for each slide
+✔ Judges Q&A preparation
+✔ UI Demo pitch words
+✔ Visual slide layout (with color & placement mapping)
+
+Just tell me what you want next.
